@@ -1,204 +1,133 @@
-$(document).ready(function() {
-	if (Modernizr.sessionstorage){
-		console.log("Session storage is supported by this browser");
+
+/**
+* @param {string[]} rooms List of booksble rooms
+* @param {boolean[][]} bookings List of existing bookings. bookings[room][time]
+* @return Element A table element of all rooms
+**/
+function createTimetable(rooms, bookings, bookingCallback) {
+	console.log('Create timetable bro');
+	var startTime = 8;
+	var endTime = 20;
+	
+	var i;
+	var letter = ['a','b','c','d'];
+	var selectedClass = 'ui-class--selected';
+	var blockedClass = 'ui-class--blocked';
+	
+	
+	
+	var table = $('<table>');
+	var headRow = $('<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">Room</div></div>');
+	headRow.append(rooms.map(function(roomName) { 
+		return $('<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">'+roomName+'</div></div>'); } ));
+	table.append(headRow);
+	
+	for(var time = startTime; time < endTime; time++) {
+		var timeRow = $('<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">'+time+'</div></div>');
+		timeRow.append(rooms.map(
+			function(roomName) {
+				var thisBlock = $('<td data-room="'+roomName+'" data-time="'+time+'"></td>');
+				var isBlocked = !!bookings[rooms.indexOf(roomName)][time];	// add some error checking around this
+				if(isBlocked) {
+					// If there is an existing booking add booked class
+					thisBlock.addClass(blockedClass);
+				} else {
+					// If there is not existing booking bind click event
+					(function(blockTime) {
+						thisBlock.on('click', function() {
+							if(thisBlock.hasClass(selectedClass)) {
+								// Do whatever unbooked stuff you need
+								// e.g. Update booking list if used
+								bookingCallback({action: 'remove', room: roomName, time: blockTime});
+								thisBlock.removeClass(selectedClass);
+							} else {
+								// Do whatever booked stuff you need
+								bookingCallback({action: 'add', room: roomName, time: blockTime});
+								thisBlock.addClass(selectedClass);
+							}
+						});
+					})(time);
+				}
+				return thisBlock;
+			}
+		));
+		table.append(timeRow);
+	}
+	return table;
+}
+
+function loopLetter(o){
+	return letter[o];
+}
+
+function selectTime(id){
+	var block = document.getElementById(id);
+	console.log(block);
+	if(block.style.backgroundColor != "green"){
+			block.style.backgroundColor = "green";
 	}
 	else{
-		$('.message').text("Unfortunately your browser doesn't support Session storage");
-		$('.message').show();
+		block.style.backgroundColor = "blue";
 	}
+}
+
+function deleteBooking(){
+	$(bookingOne).remove();
+	document.location.href = "#timetable";
+}
+
+/**
+* If booking data is stored in the DOM you can use this
+* @return {Object[]} An array of all selected bookings in the format {room: roomname, time: bookingtime}
+**/
+function getBookingArray() {
+	var selectedClass = 'ui-class--selected';
+	var bookings = [];
+	$('#timetableContainer').find('.'+selectedClass, function(elem) {
+		bookings.push({
+			room: elem.data('room'),
+			time: elem.data('time')
+		});
+	});
+}
+
+
+$(document).ready(function() {
+	$('#datepicker').datepicker({
+		onSelect: function(dateString) {
+			var myDate = new Date(dateString);
+			console.log(myDate.toLocaleString());
+			console.log(dateString);
+			window.location.href= "#timetable";
+		}
+	});
+	
+/*
+	// Add timteable
+	var bookingArray = [];
+	$('#timetableContainer').append(createTimetable(
+		['A', 'B', 'C'],
+		[
+			[false, false, false, false, false, false, false, false, false, false, true],
+			[],
+			[]
+		],
+		function(booking) {
+			console.log(booking);
+			// Alternative to getBookingArray if you want to manage a booking list from a callback
+			if(booking.action === 'add') {
+				// Add booking to list (this may add duplicates)
+				bookingArray.push(booking);
+			} else if(booking.action === 'remove') {
+				var index = bookingArray.findIndex((function(oldBooking) { return oldBooking.time === booking.time && oldBooking.room === booking.room; }));
+				if(index >= 0) {
+					// If we have a matching booking remove it from the list
+					bookingArray.splice(index, 1);
+				}
+			}
+			console.log(bookingArray);
+		}
+	));
+*/
 });
-
-var ans1 = sessionStorage.getItem('q1score');
-var ans2 = sessionStorage.getItem('q2score');
-var ans3 = sessionStorage.getItem('q3score');
-var ans4 = sessionStorage.getItem('q4score');
-var ans5 = sessionStorage.getItem('q5score');
-var question4answer = document.getElementById("question4Answer");
-
-
-
-//---------QUESTION 1------------
-
-//Correct
-function question1Correct(){
-
-if (ans1 = null){
-	ans1 = 0;
-}
-
-ans1 = 1;
-
-sessionStorage.setItem('q1score', ans1);
-console.log(sessionStorage.getItem('q1score'));
-document.location.href = "#quiz-2";
-}
-
-//Wrong
-function question1Wrong(){
-	if (ans1 = null){
-	ans1 = 0;
-}
-
-ans1 = 0;
-
-sessionStorage.setItem('q1score', ans1);
-console.log(sessionStorage.getItem('q1score'));
-document.location.href = "#quiz-2";
-}
-
-//---------QUESTION 2------------
-
-//Correct
-function question2Correct(){
-
-if (ans2 = null){
-	ans2 = 0;
-}
-
-ans2 = 1;
-
-sessionStorage.setItem('q2score', ans2);
-console.log(sessionStorage.getItem('q2score'));
-document.location.href = "#quiz-3";
-}
-
-//Wrong
-function question2Wrong(){
-	if (ans2 = null){
-	ans2 = 0;
-}
-
-ans2 = 0;
-
-sessionStorage.setItem('q2score', ans2);
-console.log(sessionStorage.getItem('q2score'));
-document.location.href = "#quiz-3";
-}
-
-
-//---------QUESTION 3------------
-
-//Correct
-function question3Correct(){
-
-if (ans3 = null){
-	ans3 = 0;
-}
-
-ans3 = 1;
-
-sessionStorage.setItem('q3score', ans3);
-console.log(sessionStorage.getItem('q3score'));
-document.location.href = "#quiz-4";
-}
-
-//Wrong
-function question3Wrong(){
-	if (ans3 = null){
-	ans3 = 0;
-}
-
-ans3 = 0;
-
-sessionStorage.setItem('q3score', ans3);
-console.log(sessionStorage.getItem('q3score'));
-document.location.href = "#quiz-4";
-}
-
-//---------QUESTION 4------------
-
-//Correct
-function question4Correct(){
-if (ans4 = null){
-	ans4 = 0;
-}
-
-ans4 = 1;
-
-sessionStorage.setItem('q4score', ans4);
-console.log(sessionStorage.getItem('q4score'));
-showAnswers();
-document.location.href = "#answers";
-$("#try").css("font-size",24 + "px");
-}
-
-//Wrong
-function question4Wrong(){
-	
-if (ans4 = null){
-	ans4 = 0;
-}
-
-ans4 = 0;
-
-sessionStorage.setItem('q4score', ans4);
-console.log(sessionStorage.getItem('q4score'));
-
-
-size = parseInt($('#try').css('font-size'));
-console.log(size);
-size=size+2;
-$("#try").css("font-size",size + "px");
-console.log(size);
-}
-
-//Skip
-function question4Skip(){
-	if (ans4 = null){
-	ans4 = 0;
-}
-
-ans4 = 0;
-
-sessionStorage.setItem('q4score', ans4);
-console.log(sessionStorage.getItem('q4score'));
-showAnswers();
-document.location.href = "#answers";
-}
-
-
-
-//---------ANSWERS------------
-
-function showAnswers(){
-	if(ans1 == 1){
-		document.getElementById('q-ans-1').src ="images/answers/correct.png"
-	} else{
-		document.getElementById('q-ans-1').src ="images/answers/wrong.png"
-	};
-	
-	if(ans2 ==1){
-		document.getElementById('q-ans-2').src="images/answers/correct.png"
-	} else{
-		document.getElementById('q-ans-2').src ="images/answers/wrong.png"
-	};
-	
-	if(ans3 ==1){
-		document.getElementById('q-ans-3').src="images/answers/correct.png"
-	} else{
-		document.getElementById('q-ans-3').src ="images/answers/wrong.png"
-	};
-	
-	if(ans4 ==1){
-		document.getElementById('q-ans-4').src="images/answers/correct.png"
-	} else{
-		document.getElementById('q-ans-4').src ="images/answers/wrong.png"
-	};
-}
-
-function sessionClear(){
-	sessionStorage.clear();
-	document.location.href = "#home";
-}
-
-
-
-
-
-
-
-
-
-
-
 

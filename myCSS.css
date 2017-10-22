@@ -1,0 +1,31 @@
+.ui-class--selected {
+	background: green;
+}
+
+.ui-class--available{
+	background: yellow;
+}
+.ui-class--blocked {
+	background: red;
+}
+
+.ui-bar-e{
+	background: red;
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+}
+
+.ui-bar-f{
+	background: blue;
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+}
+
+.ui-bar-g{
+	background: green;
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+}
