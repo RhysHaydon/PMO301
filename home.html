@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Rhys Haydon">
+      <title>Page Title</title>
+      <link rel="stylesheet" href="myCSS.css"/>
+      <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+	  <link rel="stylesheet" href="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.css" />
+      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script src="jquery.mobile-1.4.5.min.js"></script>
+      <script src="modernizr.js"></script>
+      <script src="myJS.js"></script>
+	  <script src="https://rawgithub.com/jquery/jquery-ui/1-10-stable/ui/jquery.ui.datepicker.js"></script>
+	  <script src="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.js"></script>
+   </head>
+   <body>
+
+<!--1. TIMETABLE-->	  
+	  <section data-role="page" id="timetable">
+
+         <div data-role="content">
+		 
+			<div class="ui-gird-c">
+				<!--ROW 1-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">Room</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">A</div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">B</div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">C</div></div>
+				<!--ROW 2-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">8am</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 2-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">9am</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 2-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">10am</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 3-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">11am</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 4-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">12pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 4-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">1pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 4-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">2pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 4-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">3pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 4-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">4pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 4-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">5pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<!--ROW 4-->
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px;width:50px">6pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:60px;width:50px"></div></div>
+         </div>
+		 
+			<form class="ui-bar">
+				<a href="#details" type="button">Create Booking</a>
+			</form>
+		 </div>
+		 
+		 <div data-role="navigation">
+			 <!--TOP NAV-->
+			 <div data-role="header" data-position="fixed">
+				 <h1>March 3rd</h1>
+					<a href="#login" data-icon="action" class="ui-btn-left">Login</a>
+					<a href="javascript:history.back()" data-icon="back" class="ui-btn-right">Back</a>
+			</div>
+		
+			 
+			 <!--BOTTOM NAV-->
+			 <div data-role="footer" data-position="fixed" class="ui-footer ui-bar-a uui-footer-fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#calendar" data-icon="calendar" >Calendar</a></li>
+						<li><a href="#timetable" data-icon="grid" class="ui-btn-active">Timetable</a></li>
+						<li><a href="#bookings" data-icon="tag" >My Bookings</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+
+<!--2. CALENDAR-->	  
+	<section data-role="page" id="calendar">
+		 
+         <div data-role="content">
+		 
+			<input type="text" id="date-input" data-inline="true" data-role="date">
+		 
+         </div>
+		 
+		 <div data-role="navigation">
+		 
+			 <!--TOP NAV-->
+			 <div data-role="header" data-position="fixed">
+				 <h1>Calendar</h1>
+					<a href="#login" data-icon="action" class="ui-btn-left">Login</a>
+					<a href="javascript:history.back()" data-icon="back" class="ui-btn-right">Back</a>
+			</div>
+		
+			 
+			 <!--BOTTOM NAV-->
+			 <div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#calendar" data-icon="calendar" class="ui-btn-active">Calendar</a></li>
+						<li><a href="#timetable" data-icon="grid">Timetable</a></li>
+						<li><a href="#bookings" data-icon="tag" >My Bookings</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>  
+	  
+<!--3. YOUR BOOKINGS-->	  
+	<section data-role="page" id="bookings">
+	
+		<div data-role="content" class="ui-bar">
+			
+			<ul data-role="listview" data-split-icon="delete" data-theme="a" data-split-theme="b" data-insert="true" class="ui-bar">
+				<li data-role="list-divider">Tuesday, March 3rd, 2017</li>
+				<li><a href="#starts">
+					<h2>01:00pm - 03:00pm</h2>
+					<p><strong> Room: B</strong></p>
+					<p><strong> People Booked: 4</strong></p>
+					<p><strong> AV Equipment Usage: YES</strong></p>
+					<a href="#delete" data-theme="a" data-rel="popup" data-position-to="window" data-transition="pop">Are you sure you want to delete?</a>
+				</li></a>
+			</ul>
+			
+			<div data-role="popup" id="delete" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+				<h3>Delete Booking?</h3>
+				<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini">Delete</a>
+				
+				<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+			</div>
+			
+		</div>
+		 
+		<div data-role="navigation">
+		
+		
+			 <!--TOP NAV-->
+			 <div data-role="header" data-position="fixed">
+				 <h1>Your Bookings</h1>
+					<a href="#login" data-icon="action" class="ui-btn-left">Login</a>
+					<a href="javascript:history.back()" data-icon="back" class="ui-btn-right">Back</a>
+			</div>
+		
+			 
+			 <!--BOTTOM NAV-->
+			 <div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#calendar" data-icon="calendar">Calendar</a></li>
+						<li><a href="#timetable" data-icon="grid">Timetable</a></li>
+						<li><a href="#bookings" data-icon="tag" class="ui-btn-active">My Bookings</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+       	
+<!--4. LOGIN-->
+      <section data-role="page" id="login">
+         
+         <div data-role="content">
+		 
+			<form>
+				<label for="s-username">Student Number (sXXXXXX):</label>
+				<input type="text" name="username" id="username" value="">
+				
+				<label for="password">Password:</label>
+				<input type="password" data-clear-btn="true" name="password" id="password" value="">
+				
+				<a href="#timetable" class="ui-btn">Login</a>
+				<input type="button" value="Admin Login">
+			</form>
+         </div>
+      </section>
+
+<!--5. BOOKING DETAILS-->	  
+	  <section data-role="page" id="details">
+ 
+         <div data-role="content">
+		 
+			<div class="ui-body ui-body-a ui-corner-all">
+				<h2> Your Room Is Here:</h2>
+					<img src="https://via.placeholder.com/300x400">
+				
+				<h2> Booking Details:</h2>
+					<h3> Date: March 3rd </h3>
+					<h3> Time: 1pm - 3pm </h3>
+			
+				
+    			<label for="number-of-people" class="select">Number of People:</label>
+    			<select name="number-of-people" id="number-of-people">
+        			<option value="2">Two</option>
+        			<option value="3">Three</option>
+					<option value="4">Four</option>
+					<option value="5">Five</option>
+					<option value="6">Six</option>
+					<option value="7">Seven</option>
+					<option value="8">Eight</option>
+    			</select>
+				
+				<label for="avSlider" class="ui-bar">Will You Use the AV Equipment?:</label>
+				<select name="avSlider" id="avSlider" data-role="slider">
+				    <option value="off">No</option>
+				    <option value="on">Yes</option>
+				</select>
+				
+				<div class="ui-grid-a">
+					<div class="ui-block-a"><a href="#timetable" class="ui-shadow ui-btn ui-corner-all">Cancel</a></div>
+					<div class="ui-block-b"><a href="#tos" class="ui-shadow ui-btn ui-corner-all">Book</a></div>
+				</div>
+			</div>
+         </div>
+		 
+		 <div data-role="navigation">
+		
+			 <!--TOP NAV-->
+			 <div data-role="header" data-position="fixed">
+				 <h1>Booking Details</h1>
+					<a href="#login" data-icon="action" class="ui-btn-left">Login</a>
+					<a href="javascript:history.back()" data-icon="back" class="ui-btn-right">Back</a>
+			</div>
+		
+			 
+			 <!--BOTTOM NAV-->
+			 <div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#calendar" data-icon="calendar">Calendar</a></li>
+						<li><a href="#timetable" data-icon="grid">Timetable</a></li>
+						<li><a href="#bookings" data-icon="tag">My Bookings</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		 
+      </section>	  
+	  
+<!--6. TERMS OF SERVICE-->	  
+	  <section data-role="page" id="tos">
+
+         <div data-role="content">
+		 
+			<div class="ui-body ui-body-a ui-corner-all">
+				<h2>Terms of Service</h2>
+					<ul>
+						<li>No food or drink.</li>
+						<li>No noisy or inappropriate behaviour.</li>
+						<li>No theft or damage to equipment.</li>
+						<li>Room to be left in a tidy condition.</li>
+						<li>Rooms will be re-allocated if the room is vacant for 15 minutes.</li>
+						<li>The room key must be returned in time for the next booking.</li>
+						<li>Whiteboard pens and erasers are not provided by the Library.</li>
+						<p>Should any of these conditions be breached, student access to the study room will be revoked.</p>
+					</ul>
+				
+				<div class="ui-grid-a">
+					<div class="ui-block-a"><a href="#timetable" class="ui-shadow ui-btn ui-corner-all">Decline</a></div>
+					<div class="ui-block-b"><a href="#starts" class="ui-shadow ui-btn ui-corner-all">Accept</a></div>
+				</div>
+			</div>
+		 
+         </div>
+		 
+		 <div data-role="navigation">
+		
+			 <!--TOP NAV-->
+			 <div data-role="header" data-position="fixed">
+				 <h1>Booking Details</h1>
+					<a href="#login" data-icon="action" class="ui-btn-left">Login</a>
+					<a href="javascript:history.back()" data-icon="back" class="ui-btn-right">Back</a>
+			</div>
+		
+			 
+			 <!--BOTTOM NAV-->
+			 <div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#calendar" data-icon="calendar">Calendar</a></li>
+						<li><a href="#timetable" data-icon="grid">Timetable</a></li>
+						<li><a href="#bookings" data-icon="tag">My Bookings</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+      </section>		  	 
+	 
+<!--7. BOOKING STARTS-->	  
+	  <section data-role="page" id="starts">
+         
+		 <div data-role="content">
+		 
+			<div class="ui-body ui-body-a ui-corner-all">
+				<h2>Booking Starts At</h2>
+				<h2>March 3rd 1pm</h2>
+			</div>
+			
+			<p></p>
+			
+			<div class="ui-body ui-body-a ui-corner-all">
+				<h2>Time Remaining</h2>
+				<h2>03:00:00</h2>
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><a href="#delete2" data-theme="a" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-shadow ui-btn ui-corner-all">Cancel Booking</a></div>
+				<div class="ui-block-b"><a href="#bookings" class="ui-shadow ui-btn ui-corner-all">Done</a></div>
+			</div>
+				
+				
+				
+			<div data-role="popup" id="delete2" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+			<h3>Delete Booking?</h3>
+			<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini">Delete</a>
+			<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+			</div>
+			
+			</div>
+		 
+		 <div data-role="navigation">
+		
+			 <!--TOP NAV-->
+			 <div data-role="header" data-position="fixed">
+				 <h1>Your Booking</h1>
+					<a href="#login" data-icon="action" class="ui-btn-left">Login</a>
+					<a href="javascript:history.back()" data-icon="back" class="ui-btn-right">Back</a>
+			</div>
+		
+			 
+			 <!--BOTTOM NAV-->
+			 <div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#calendar" data-icon="calendar">Calendar</a></li>
+						<li><a href="#timetable" data-icon="grid">Timetable</a></li>
+						<li><a href="#bookings" data-icon="tag">My Bookings</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+      </section>	 
+	 
+   </body>
+</html>
