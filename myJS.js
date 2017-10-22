@@ -4,6 +4,14 @@
 * @param {boolean[][]} bookings List of existing bookings. bookings[room][time]
 * @return Element A table element of all rooms
 **/
+
+var timeSlots = 0;
+var bookingPeople = sessionStorage.getItem('bookingPeople');
+var bookingAV = sessionStorage.getItem('avSlide');
+var pickedDate = sessionStorage.getItem('pickedDate');
+var showBookings = sessionStorage.getItem('showBookings');
+
+
 function createTimetable(rooms, bookings, bookingCallback) {
 	console.log('Create timetable bro');
 	var startTime = 8;
@@ -56,24 +64,49 @@ function createTimetable(rooms, bookings, bookingCallback) {
 	return table;
 }
 
-function loopLetter(o){
-	return letter[o];
-}
-
 function selectTime(id){
 	var block = document.getElementById(id);
 	console.log(block);
 	if(block.style.backgroundColor != "green"){
 			block.style.backgroundColor = "green";
+			timeSlots++;
+			console.log(timeSlots);
 	}
 	else{
 		block.style.backgroundColor = "blue";
+			timeSlots--;
 	}
 }
 
+
+
+function createBooking(){
+	if(timeSlots == 0){
+		alert("Please select a time for your booking");
+	}
+	else{
+		window.location.href= "#details"
+	}
+}
+
+function createDetails(){
+	var detailsPeople = $('#number-of-people').find(":selected").text();
+	sessionStorage.setItem('bookingPeople', detailsPeople);
+	
+	var detailsAV = $('#avSlider').find(":selected").text();
+	sessionStorage.setItem('avSlide', detailsAV);
+}
+
+function finalizeBooking(){
+	$('#bookings--people').text(sessionStorage.getItem('bookingPeople'));
+	$('#bookings--av').text(sessionStorage.getItem('avSlide'));
+	$('#bookings--date').text(sessionStorage.getItem('pickedDate'));
+	sessionStorage.setItem('showBookings', 1);
+	$(bookingOne).show();
+}
+
 function deleteBooking(){
-	$(bookingOne).remove();
-	document.location.href = "#timetable";
+	$(bookingOne).hide();
 }
 
 /**
@@ -95,13 +128,23 @@ function getBookingArray() {
 $(document).ready(function() {
 	$('#datepicker').datepicker({
 		onSelect: function(dateString) {
-			var myDate = new Date(dateString);
-			console.log(myDate.toLocaleString());
-			console.log(dateString);
+			var myDate = new moment(dateString).format("MMM Do");
+			var myLongDate = new moment(dateString).format("MMM Do");
+			sessionStorage.setItem('pickedDate', myDate);
+			console.log(sessionStorage.getItem('pickedDate'));
+			$("#timetable--Date").text(myDate);
+			$("#details--Date").text(myDate);
+			$("#starts--Date").text(myDate);
 			window.location.href= "#timetable";
 		}
 	});
 	
+	if(sessionStorage.getItem('showBookings') == 1){
+		$(bookingOne).hide();
+	}
+	else{
+		$(bookingOne).show();
+	}
 /*
 	// Add timteable
 	var bookingArray = [];

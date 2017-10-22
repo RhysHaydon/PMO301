@@ -1,3 +1,7 @@
+#details--Date{
+	display:inline;
+}
+
 .ui-class--selected {
 	background: green;
 }
@@ -28,4 +32,16 @@
 	border-style: solid;
 	border-width: 1px;
 	border-color: gray;
+}
+
+.ui-table--header{
+	height: 2em;
+	width: 2.2em;
+	text-align: left;
+}
+
+.ui-table--slot{
+	height: 2.5em;
+	width: 2.2em;
+	text-align: left;
 }

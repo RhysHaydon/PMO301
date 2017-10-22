@@ -14,6 +14,7 @@
       <script src="myJS.js"></script>
 	  <script src="https://rawgithub.com/jquery/jquery-ui/1-10-stable/ui/jquery.ui.datepicker.js"></script>
 	  <script src="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.js"></script>
+	  <script src="moment.js"></script>
    </head>
    <body>
 
@@ -25,76 +26,76 @@
 		 
 			<div class="ui-gird-c">
 				<!--ROW 1-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px;width:30px">Room</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:30px;width:30px">A</div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:30px;width:30px">B</div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:30px;width:30px">C</div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--header">Room</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-a ui-table--header">3.03</div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-a ui-table--header">3.04</div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-a ui-table--header">3.05</div></div>
 				<!--ROW 2-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">8am</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">8am</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 2-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">9am</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">9am</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 2-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">10am</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">10am</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 3-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">11am</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-f" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">11am</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 4-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">12pm</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-f" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-f" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">12pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 5-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">1pm</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-f" id="booking1" onclick="selectTime(id)" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">1pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-f ui-table--slot" id="booking1" onclick="selectTime(id)"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 6-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">2pm</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-f" id="booking2" onclick="selectTime(id)" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">2pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-f ui-table--slot" id="booking2" onclick="selectTime(id)"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 7-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">3pm</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-f" id="booking3" onclick="selectTime(id)" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">3pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-f ui-table--slot" id="booking3" onclick="selectTime(id)"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 8-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">4pm</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-f" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-f" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">4pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 9-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">5pm</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-f" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-f" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">5pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
 				<!--ROW 10-->
-				<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:40px;width:30px">6pm</div></div>
-				<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-c"><div class="ui-bar ui-bar-f" style="height:40px;width:30px"></div></div>
-				<div class="ui-block-d"><div class="ui-bar ui-bar-f" style="height:40px;width:30px"></div></div>
+				<div class="ui-block-a"><div class="ui-bar ui-bar-a ui-table--slot">6pm</div></div>
+				<div class="ui-block-b"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-c"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
+				<div class="ui-block-d"><div class="ui-bar ui-bar-e ui-table--slot"></div></div>
          </div>
 		 
 			<form class="ui-bar">
-				<a href="#details" type="button">Create Booking</a>
+				<a href="#" type="button" onclick="createBooking()">Create Booking</a>
 			</form>
 		 </div>
 		 
 		 <div data-role="navigation">
 			 <!--TOP NAV-->
 			 <div data-role="header" data-position="fixed">
-				 <h1>March 3rd</h1>
+				 <h1 id="timetable--Date">March 3rd</h1>
 					<a href="#login" data-icon="action" class="ui-btn-left">Login</a>
 					<a href="javascript:history.back()" data-icon="back" class="ui-btn-right">Back</a>
 			</div>
@@ -110,8 +111,7 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-		
+		</div>	
 	</section>
 
 <!--2. CALENDAR-->	  
@@ -153,12 +153,12 @@
 		<div data-role="content" class="ui-bar">
 			
 			<ul data-role="listview" data-split-icon="delete" data-theme="a" data-split-theme="b" data-insert="true" class="ui-bar" id="bookingOne">
-				<li data-role="list-divider">Tuesday, March 3rd, 2017</li>
+				<li data-role="list-divider"id="bookings--date">Tuesday, March 3rd, 2017</li>
 				<li><a href="#starts">
 					<h2>01:00pm - 03:00pm</h2>
-					<p><strong> Room: B</strong></p>
-					<p><strong> People Booked: 4</strong></p>
-					<p><strong> AV Equipment Usage: YES</strong></p>
+					<p><strong> Room: 3.04</strong></p>
+					<p><strong> People Booked: <span id="bookings--people">4<span></strong></p>
+					<p><strong> AV Equipment Usage: <span id="bookings--av">YES<span></strong></p>
 					<a href="#delete" data-theme="a" data-rel="popup" data-position-to="window" data-transition="pop">Are you sure you want to delete?</a>
 				</li></a>
 			</ul>
@@ -209,7 +209,6 @@
 				<input type="password" data-clear-btn="true" name="password" id="password" value="">
 				
 				<a href="#timetable" class="ui-btn">Login</a>
-				<input type="button" value="Admin Login">
 			</form>
          </div>
       </section>
@@ -224,7 +223,7 @@
 					<img src="images/floorplan.png" style: width="95%">
 				
 				<h2> Booking Details:</h2>
-					<h3> Date: March 3rd </h3>
+					<h3> Date: <span id="details--Date">March 3rd</span></h3>
 					<h3> Time: 1pm - 3pm </h3>
 			
 			</div>
@@ -233,13 +232,13 @@
 				
     			<label for="number-of-people" class="select">Number of People:</label>
     			<select name="number-of-people" id="number-of-people">
-        			<option value="2">Two</option>
-        			<option value="3">Three</option>
-					<option value="4">Four</option>
-					<option value="5">Five</option>
-					<option value="6">Six</option>
-					<option value="7">Seven</option>
-					<option value="8">Eight</option>
+        			<option value="2">2</option>
+        			<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
     			</select>
 				
 				<label for="avSlider" class="ui-bar">Will You Use the AV Equipment?:</label>
@@ -250,7 +249,7 @@
 				
 				<div class="ui-grid-a">
 					<div class="ui-block-a"><a href="#timetable" class="ui-shadow ui-btn ui-corner-all">Cancel</a></div>
-					<div class="ui-block-b"><a href="#tos" class="ui-shadow ui-btn ui-corner-all">Book</a></div>
+					<div class="ui-block-b"><a href="#tos" class="ui-shadow ui-btn ui-corner-all" onclick="createDetails()">Book</a></div>
 				</div>
 			</div>
 			</div>
@@ -300,7 +299,7 @@
 				
 				<div class="ui-grid-a">
 					<div class="ui-block-a"><a href="#timetable" class="ui-shadow ui-btn ui-corner-all">Decline</a></div>
-					<div class="ui-block-b"><a href="#starts" class="ui-shadow ui-btn ui-corner-all">Accept</a></div>
+					<div class="ui-block-b"><a href="#starts" class="ui-shadow ui-btn ui-corner-all" onclick="finalizeBooking()">Accept</a></div>
 				</div>
 			</div>
 		 
@@ -335,8 +334,15 @@
 		 <div data-role="content">
 		 
 			<div class="ui-body ui-body-a ui-corner-all">
-				<h2>Booking Starts At</h2>
-				<h2>March 3rd 1pm</h2>
+				<h2>Booking Starts On</h2>
+				<h2><span id="starts--Date">March 3rd</span></h2>
+			</div>
+			
+			<p></p>
+			
+			<div class="ui-body ui-body-a ui-corner-all">
+				<h2>Booking Time</h2>
+				<h2><span id="starts--Date">1pm - 3pm</span></h2>
 			</div>
 			
 			<p></p>
@@ -346,7 +352,7 @@
 				<h2>03:00:00</h2>
 			</div>
 			<div class="ui-grid-a">
-				<div class="ui-block-a"><a href="#delete2" data-theme="a" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-shadow ui-btn ui-corner-all" onclick="deleteBooking()">Cancel Booking</a></div>
+				<div class="ui-block-a"><a href="#delete2" data-theme="a" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-shadow ui-btn ui-corner-all" >Cancel Booking</a></div>
 				<div class="ui-block-b"><a href="#bookings" class="ui-shadow ui-btn ui-corner-all">Done</a></div>
 			</div>
 				
@@ -354,7 +360,7 @@
 				
 			<div data-role="popup" id="delete2" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
 			<h3>Delete Booking?</h3>
-			<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini">Delete</a>
+			<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini" onclick="deleteBooking()">Delete</a>
 			<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
 			</div>
 			
