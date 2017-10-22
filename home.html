@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="author" content="Rhys Haydon">
-      <title>Page Title</title>
+      <title>CDU Library Study Rooms</title>
       <link rel="stylesheet" href="myCSS.css"/>
       <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
 	  <link rel="stylesheet" href="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.css" />
@@ -13,7 +13,6 @@
       <script src="modernizr.js"></script>
       <script src="myJS.js"></script>
 	  <script src="https://rawgithub.com/jquery/jquery-ui/1-10-stable/ui/jquery.ui.datepicker.js"></script>
-	  <script src="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.js"></script>
 	  <script src="moment.js"></script>
    </head>
    <body>
@@ -88,7 +87,7 @@
          </div>
 		 
 			<form class="ui-bar">
-				<a href="#" type="button" onclick="createBooking()">Create Booking</a>
+				<a href="#" type="button" onclick="bookingCreate()">Create Booking</a>
 			</form>
 		 </div>
 		 
@@ -153,7 +152,7 @@
 		<div data-role="content" class="ui-bar">
 			
 			<ul data-role="listview" data-split-icon="delete" data-theme="a" data-split-theme="b" data-insert="true" class="ui-bar" id="bookingOne">
-				<li data-role="list-divider"id="bookings--date">Tuesday, March 3rd, 2017</li>
+				<li data-role="list-divider" id="bookings--Date">Tuesday, March 3rd, 2017</li>
 				<li><a href="#starts">
 					<h2>01:00pm - 03:00pm</h2>
 					<p><strong> Room: 3.04</strong></p>
@@ -165,7 +164,7 @@
 			
 			<div data-role="popup" id="delete" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
 				<h3>Delete Booking?</h3>
-				<a href="#" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini" onclick="deleteBooking()">Delete</a>
+				<a href="#" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini" onclick="bookingDelete()">Delete</a>
 				
 				<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
 			</div>
@@ -202,15 +201,21 @@
          <div data-role="content">
 		 
 			<form>
-				<label for="s-username">Student Number (sXXXXXX):</label>
+				<label for="username">Student Number (sXXXXXX):</label>
 				<input type="text" name="username" id="username" value="">
 				
 				<label for="password">Password:</label>
-				<input type="password" data-clear-btn="true" name="password" id="password" value="">
+				<input type="password" data-clear-btn="true" name="password" id="passWord" value="">
 				
-				<a href="#timetable" class="ui-btn">Login</a>
+				<a href="#" class="ui-btn" onclick="login()">Login</a>
 			</form>
          </div>
+		 
+		 <!--TOP NAV-->
+			 <div data-role="header" data-position="fixed">
+				 <h1>Login</h1>
+					<a href="javascript:history.back()" data-icon="back" class="ui-btn-right">Back</a>
+			</div>
       </section>
 
 <!--5. BOOKING DETAILS-->	  
@@ -249,7 +254,7 @@
 				
 				<div class="ui-grid-a">
 					<div class="ui-block-a"><a href="#timetable" class="ui-shadow ui-btn ui-corner-all">Cancel</a></div>
-					<div class="ui-block-b"><a href="#tos" class="ui-shadow ui-btn ui-corner-all" onclick="createDetails()">Book</a></div>
+					<div class="ui-block-b"><a href="#tos" class="ui-shadow ui-btn ui-corner-all" onclick="bookingDetails()">Book</a></div>
 				</div>
 			</div>
 			</div>
@@ -299,7 +304,7 @@
 				
 				<div class="ui-grid-a">
 					<div class="ui-block-a"><a href="#timetable" class="ui-shadow ui-btn ui-corner-all">Decline</a></div>
-					<div class="ui-block-b"><a href="#starts" class="ui-shadow ui-btn ui-corner-all" onclick="finalizeBooking()">Accept</a></div>
+					<div class="ui-block-b"><a href="#starts" class="ui-shadow ui-btn ui-corner-all" onclick="bookingFinalize()">Accept</a></div>
 				</div>
 			</div>
 		 
@@ -360,7 +365,7 @@
 				
 			<div data-role="popup" id="delete2" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
 			<h3>Delete Booking?</h3>
-			<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini" onclick="deleteBooking()">Delete</a>
+			<a href="#bookings" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini" onclick="bookingDelete()">Delete</a>
 			<a href="#bookings" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
 			</div>
 			

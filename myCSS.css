@@ -1,7 +1,3 @@
-#details--Date{
-	display:inline;
-}
-
 .ui-class--selected {
 	background: green;
 }
@@ -13,6 +9,7 @@
 	background: red;
 }
 
+/*UNAVAILABLE TIME SLOT*/
 .ui-bar-e{
 	background: red;
 	border-style: solid;
@@ -20,6 +17,7 @@
 	border-color: gray;
 }
 
+/*AVAILABLE TIME SLOT*/
 .ui-bar-f{
 	background: blue;
 	border-style: solid;
@@ -27,6 +25,7 @@
 	border-color: gray;
 }
 
+/*PICKED TIME SLOT*/
 .ui-bar-g{
 	background: green;
 	border-style: solid;
@@ -34,12 +33,14 @@
 	border-color: gray;
 }
 
+/*TIMETABLE Room & Room Numbers*/
 .ui-table--header{
 	height: 2em;
 	width: 2.2em;
 	text-align: left;
 }
 
+/*TIMETABLE All Non-header Cells*/
 .ui-table--slot{
 	height: 2.5em;
 	width: 2.2em;
